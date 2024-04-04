@@ -1,6 +1,7 @@
 import pytest
 from all_questions import *
 import pickle
+import math
 
 
 
@@ -54,11 +55,13 @@ def question2():
     # The formulas should only use the variable 'p'. The formulas should be
     # a valid Python expression. Use the functions in the math module as
     # required.
-    answers['(c) Weight update'] = None
+    alpha = .5 * math.log((1-.3)/.3)
+    answers['(c) Weight update'] = alpha
 
     # type: float
     # the answer should be correct to 3 significant digits
-    answers['(d) Weight influence'] = None
+    new_weight = 1 * math.e**alpha
+    answers['(d) Weight influence'] = new_weight
     return answers
 
 
@@ -70,7 +73,7 @@ def question3():
     answers['Agree?'] = "no"
 
     # type: explain_string
-    answers['Explain'] = None
+    answers['Explain'] = "Coin flips are random and have no relationship with the stock markets actual behavior. He isn't learning from the data since there is no consideration of historical data, market trends, or relevant features."
     return answers
 
 
@@ -130,17 +133,17 @@ def question6():
     # type: string
     # Hint: The random guess line in an ROC curve corresponds to TPR=FPR.
     # choices: ['yes', 'no']
-    answers['(b) C2 better classifier than C1?'] = None
+    answers['(b) C2 better classifier than C1?'] = "yes"
 
     # type: explain_string
-    answers['(b) C2 better classifier than C1? Explain'] = None
+    answers['(b) C2 better classifier than C1? Explain'] = "The line on the ROC curve for C2 starts higher whihc indicates a better classifier."
 
     # type: string
     # choices: ['TPR/FPR', 'precision/recall']
-    answers['(c) Which metric?'] = None
+    answers['(c) Which metric?'] = "TPR/FPR"
 
     # type: explain_string
-    answers['(c) explain'] = None
+    answers['(c) explain'] = "TPR/FPR is better because it considers both positive and negative classes and provides a more balanced assessment then precison/recall since precision/recall do not consider the negative classes."
     return answers
 
 
@@ -176,10 +179,12 @@ def question8():
     answers = {}
 
     # type: eval_float
-    answers['(a) precision for C0'] = None
+    # expression: precision = 100*p/ 1000*p = .1
+    answers['(a) precision for C0'] = 100/1000
 
     # type: eval_float
-    answers['(a) recall for C0'] = None
+    # expression: recall = 10*p / 100 = .1*p
+    answers['(a) recall for C0'] = .1*p
 
     # type: eval_float
     answers['(b) F-measure of C0'] = None
@@ -200,9 +205,28 @@ def question8():
 def question9():
     answers = {}
 
+    # recall = TP / TP+FN
+    recall = 80 / (80+70)
+    
+    # precision = TP / TP+FP
+    precision = 80 / (80+50)
+    
+    # F-measure = 2*TP / 2*TP+FN+FP
+    f_measure = (2*80) / (2*80 + 70 + 50)
+    
+    # accuracy = TP+TN / TP+FN+FP+TN
+    accuracy = 80 + 800 / (80+70+50+800)
+
+
     # type: dict[string,float]
     # keys: ['recall', 'precision', 'F-measure', 'accuracy']
-    answers['(i) metrics'] = None
+    
+    answers['(i) metrics'] = {
+        'recall': recall,
+        'precision': precision,
+        'F-measure': f_measure,
+        'accuracy': accuracy
+        }
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
@@ -210,7 +234,7 @@ def question9():
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
-    answers['(i) worst metric?'] = None
+    answers['(i) worst metric?'] = 'accuracy'
 
     # type: explain_string
     answers['(ii) Explain your choices of best and worst metrics'] = None
@@ -223,7 +247,7 @@ def question10():
 
     # type: string
     # choices: ['T1', 'T2']
-    answers['(a) better test based on F-measure?'] = None
+    answers['(a) better test based on F-measure?'] = "T1"
 
     # type: string
     # choices: ['T1', 'T2']
