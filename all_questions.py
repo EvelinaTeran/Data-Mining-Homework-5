@@ -67,7 +67,7 @@ def question3():
     answers = {}
 
     # type: string
-    answers['Agree?'] = None
+    answers['Agree?'] = "no"
 
     # type: explain_string
     answers['Explain'] = None
@@ -95,19 +95,19 @@ def question5():
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(a)'] = None
+    answers['(a)'] = "iii"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(b)'] = None
+    answers['(b)'] = "i"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(c)'] = None
+    answers['(c)'] = "ii"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(d)'] = None
+    answers['(d)'] = "iv"
     return answers
 
 
