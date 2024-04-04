@@ -27,28 +27,28 @@ def question2():
     answers = {}
 
     # type: bool
-    answers['(a) A'] = None
+    answers['(a) A'] = True
 
     # type: bool
-    answers['(a) B'] = None
+    answers['(a) B'] = False
 
     # type: bool
-    answers['(a) C'] = None
+    answers['(a) C'] = False
 
     # type: bool
-    answers['(a) D'] = None
+    answers['(a) D'] = True
 
     # type: bool
-    answers['(b) A'] = None
+    answers['(b) A'] = False
 
     # type: False
-    answers['(b) B'] = None
+    answers['(b) B'] = False
 
     # type: bool
-    answers['(b) C'] = None
+    answers['(b) C'] = True
 
     # type: bool
-    answers['(b) D'] = None
+    answers['(b) D'] = False
 
     # type: eval_float
     # The formulas should only use the variable 'p'. The formulas should be
