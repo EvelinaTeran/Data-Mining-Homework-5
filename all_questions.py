@@ -179,15 +179,22 @@ def question8():
     answers = {}
 
     # type: eval_float
-    # expression: precision = 100*p/ 1000*p = .1
-    answers['(a) precision for C0'] = 100/1000
+    # p = FPR
+    p = 900/1000
+    
+    #precision = TP/(TP+FP)
+    precision_C0 = .1 / (.1 + p*.9)
+    answers['(a) precision for C0'] = precision_C0
 
     # type: eval_float
-    # expression: recall = 10*p / 100 = .1*p
-    answers['(a) recall for C0'] = .1*p
+    # recall = TP / (TP+FN)
+    recall_C0 = .1 / (.1+.8)
+    answers['(a) recall for C0'] = recall_C0
 
     # type: eval_float
-    answers['(b) F-measure of C0'] = None
+    f_measure_C0 = (2*precision_C0 * recall_C0)/(precision_C0 + recall_C0)
+    answers['(b) F-measure of C0'] = f_measure_C0
+    print(f_measure_C0)
 
     # type: string
     # choices: ['yes', 'no', 'unknown']
