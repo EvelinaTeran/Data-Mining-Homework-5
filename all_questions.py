@@ -173,24 +173,37 @@ def question7():
 
     # type: string
     # choices: ['C1', 'C2', 'None']
-    answers['(i) Best classifier?'] = None
+    answers['(i) Best classifier?'] = "C2"
 
     # type: explain_string
-    answers['(i) Best classifier, explain'] = None
-
+    answers['(i) Best classifier, explain'] = """
+    Achieves higher recall meaning it is better at identifying + instances among 
+    all positive instances and it has a higher F1-measure which indicates a better 
+    balance between precision and recall.
+    """
+    
     # type: string
     # choices: ['TPR-FPR', 'precision-recall-F1-Measure']
-    answers['(ii) appropriate metric pair'] = None
+    answers['(ii) appropriate metric pair'] = 'precision-recall-F1-Measure'
 
     # type: explain_string
-    answers['(ii) appropriate metric pair, explain'] = None
+    answers['(ii) appropriate metric pair, explain'] = """
+    {precision, recall, F1-measure} correctly indicates the relative performance of 
+    classifiers C1 and C2 because it considers both the ability of the classifiers 
+    to correctly identify positive instances (recall) and their precision in making 
+    positive predictions.
+    """
 
     # type: string
     # choices: ['C1', 'C2', 'C3']
-    answers['(iii) preferred classifier?'] = None
+    answers['(iii) preferred classifier?'] = "C3"
 
     # type: explain_string
-    answers['(iii) best classifier, explain'] = None
+    answers['(iii) best classifier, explain'] = """
+    C3 has the highest precision, a reasonable recall, a good F1-measure and a low
+    false positive rate. It offers a better balance between precison and recall
+    compared to C1 and C2, making it the most suitable choice among the three.
+    """
     return answers
 
 
