@@ -198,7 +198,7 @@ def question8():
 
     # type: string
     # choices: ['yes', 'no', 'unknown']
-    answers['C1 better than random?'] = None
+    answers['C1 better than random?'] = "yes"
 
     # type: float
     # What is the range of p for which C1 is better than random?  What is
@@ -258,7 +258,7 @@ def question10():
 
     # type: string
     # choices: ['T1', 'T2']
-    answers['(b) better test based on TPR/FPR?'] = None
+    answers['(b) better test based on TPR/FPR?'] = "T2"
 
     # type: string
     # choices: ['F1', 'TPR/FPR']
