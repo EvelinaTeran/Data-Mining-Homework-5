@@ -11,15 +11,35 @@ def question1():
 
     # type: float
     # Calculate the probability.
-    answers['(a)'] = None
+    prob_B_good = 0.9
+    prob_F_empty = 0.2
+    prob_G_empty_given_B_good_F_empty = 0.8
+    prob_S_yes_given_B_good_F_empty = 0.2
+    
+    prob_part_a = prob_B_good * prob_F_empty * prob_G_empty_given_B_good_F_empty * prob_S_yes_given_B_good_F_empty
+    
+    answers['(a)'] = prob_part_a
 
     # type: float
     # Calculate the probability.
-    answers['(b)'] = None
+    prob_B_bad = 0.1
+    prob_F_empty = 0.2
+    prob_G_nonempty_given_B_bad_F_empty = 0.9
+    prob_S_no_given_B_bad_F_empty = 1
+    
+    prob_part_b = prob_B_bad * prob_F_empty * prob_G_nonempty_given_B_bad_F_empty * prob_S_no_given_B_bad_F_empty
+    
+    answers['(b)'] = prob_part_b
 
     # type: float
     # Calculate the probability.
-    answers['(c)'] = None
+    # P(S=yes | B=bad) = P(S=yes, B=bad)/P(B=bad)
+    prob_s_yes_b_bad = 0.0
+    prob_b_bad = 0.1
+
+    prob_part_c = prob_s_yes_b_bad / prob_b_bad
+
+    answers['(c)'] = prob_part_c
     return answers
 
 
