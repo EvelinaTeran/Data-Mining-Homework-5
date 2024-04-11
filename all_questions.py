@@ -200,21 +200,21 @@ def question8():
 
     # type: eval_float
     # p = FPR
-    p = 900/1000
+    # p = 900/1000
     
     #precision = TP/(TP+FP)
     precision_C0 = .1 / (.1 + p*.9)
-    answers['(a) precision for C0'] = precision_C0
+    answers['(a) precision for C0'] = ".1 / (.1 + p*.9)"
 
     # type: eval_float
     # recall = TP / (TP+FN)
     recall_C0 = .1 / (.1+.8)
-    answers['(a) recall for C0'] = recall_C0
+    answers['(a) recall for C0'] = ".1 / (.1+.8)"
 
     # type: eval_float
-    f_measure_C0 = (2*precision_C0 * recall_C0)/(precision_C0 + recall_C0)
-    answers['(b) F-measure of C0'] = f_measure_C0
-    print(f_measure_C0)
+    #f_measure_C0 = (2*precision_C0 * recall_C0)/(precision_C0 + recall_C0)
+    answers['(b) F-measure of C0'] = "(2*(.1 / (.1 + p*.9)) * (.1 / (.1+.8)))/((.1 / (.1 + p*.9)) + (.1 / (.1+.8)))"
+    # print(f_measure_C0)
 
     # type: string
     # choices: ['yes', 'no', 'unknown']
@@ -224,7 +224,7 @@ def question8():
     # What is the range of p for which C1 is better than random?  What is
     # "?" in the expression "p > ?"
 
-    answers['p-range'] = None
+    answers['p-range'] = 0
     return answers
 
 
