@@ -257,14 +257,19 @@ def question9():
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
-    answers['(i) best metric?'] = None
+    answers['(i) best metric?'] = 'F-measure'
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
     answers['(i) worst metric?'] = 'accuracy'
 
     # type: explain_string
-    answers['(ii) Explain your choices of best and worst metrics'] = None
+    answers['(ii) Explain your choices of best and worst metrics'] = """
+    Accuarcy is the worst because it is skewed by the inbalanced number of rain cases. 
+    It would be easy to say it always rains in Seattle and you would still have a high accuracy.
+    F-measure is the best because it provides a balance between recall and precision and
+    is especially useful when there is an inbalance of classes like in this case.
+    """
     return answers
 
 
@@ -282,13 +287,26 @@ def question10():
 
     # type: string
     # choices: ['F1', 'TPR/FPR']
-    answers['(c) Which evaluation measure to use between the two tests?'] = None
+    answers['(c) Which evaluation measure to use between the two tests?'] = "F1"
 
     # type: explain_string
-    answers['(c) Which evaluation measure? Explain'] = None
+    answers['(c) Which evaluation measure? Explain'] = """
+    While maximizing TPR/FPR ratio might identify a test that has a higher ability to discriminate 
+    between + and - cases, it may come at the cost of lower recall(ie higher FNR). This could lead 
+    to a higher number of missed cancer cases, which in unacceptable in this situation.
+    """
 
     # type: explain_string
-    answers['(d) Example scenario where you would reverse choise in (c)'] = None
+    answers['(d) Example scenario where you would reverse choise in (c)'] = """
+    Let's consider airport security where the primary goal is to detect prohibited items (weapons) while 
+    also minimizing inconvience to passengers. False alarms can lead to delays and inconvience to passenegers
+    but they do not pose an immediate threat. However, missing a prohibited item can have severe consequences.
+    For this case, the priority is to minimize false positives while maintaining a high detection rate for
+    prohibited items. Here TPR/FPR is a better measure. A higher TPR/FPR ratio indicates a better ability to
+    distinguish genuine threats and false alarms which allows airport secuirty to enhance security measures 
+    while minimizing disruptions to passengers.
+    
+    """
     return answers
 #-----------------------------------------------------------
 if __name__ == '__main__':
