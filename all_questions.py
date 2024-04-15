@@ -75,12 +75,14 @@ def question2():
     # The formulas should only use the variable 'p'. The formulas should be
     # a valid Python expression. Use the functions in the math module as
     # required.
-    alpha = .5 * math.log((1-.3)/.3)
+    error_rate = 0.3
+    alpha = .5 * math.log((1-error_rate)/error_rate)
     answers['(c) Weight update'] = alpha
 
     # type: float
     # the answer should be correct to 3 significant digits
-    new_weight = 1 * math.e**alpha
+    original_weight = 1
+    new_weight = original_weight * (math.exp(alpha))
     answers['(d) Weight influence'] = new_weight
     return answers
 
