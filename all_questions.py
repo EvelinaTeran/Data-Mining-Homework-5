@@ -77,7 +77,7 @@ def question2():
     # required.
     error_rate = 0.3
     alpha = .5 * math.log((1-error_rate)/error_rate)
-    answers['(c) Weight update'] = alpha
+    answers['(c) Weight update'] = ".5 * math.log((1-p)/p)"
 
     # type: float
     # the answer should be correct to 3 significant digits
