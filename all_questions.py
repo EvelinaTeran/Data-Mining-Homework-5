@@ -144,15 +144,19 @@ def question6():
     answers = {}
 
     # type: eval_float
+    # c1 TPR = 100*p / 100 = p
     answers['(a) C1-TPR'] = "p"
 
     # type: eval_float
+    # c2 TPR = 2*100*p / 100 = 2p
     answers['(a) C2-TPR'] = "2*p"
 
     # type: eval_float
+    # c1 FPR = 900*p / 900 = p
     answers['(a) C1-FPR'] = "p"
 
     # type: eval_float
+    # c2 FPR = 2*900*p / 900 = 2*p
     answers['(a) C2-FPR'] = "2*p"
 
     # type: string
