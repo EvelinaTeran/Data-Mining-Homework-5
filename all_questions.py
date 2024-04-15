@@ -93,7 +93,10 @@ def question3():
     answers['Agree?'] = "no"
 
     # type: explain_string
-    answers['Explain'] = "Coin flips are random and have no relationship with the stock markets actual behavior. He isn't learning from the data since there is no consideration of historical data, market trends, or relevant features."
+    answers['Explain'] = """Coin flips are random and have no relationship with the stock 
+    markets actual behavior. He isn't learning from the data since there is no consideration 
+    of historical data, market trends, or relevant features.
+    """
     return answers
 
 
@@ -102,7 +105,7 @@ def question4():
     answers = {}
 
     # type: bool
-    answers['(a) e=0.5, independent'] = True
+    answers['(a) e=0.5, independent'] = False
 
     # type: bool
     answers['(b), independent'] = True
@@ -145,25 +148,34 @@ def question6():
     answers['(a) C2-TPR'] = "2*p"
 
     # type: eval_float
-    answers['(a) C1-FPR'] = 900/1000
+    answers['(a) C1-FPR'] = "p"
 
     # type: eval_float
-    answers['(a) C2-FPR'] = 900/1000
+    answers['(a) C2-FPR'] = "2*p"
 
     # type: string
     # Hint: The random guess line in an ROC curve corresponds to TPR=FPR.
     # choices: ['yes', 'no']
-    answers['(b) C2 better classifier than C1?'] = "yes"
+    answers['(b) C2 better classifier than C1?'] = "no"
 
     # type: explain_string
-    answers['(b) C2 better classifier than C1? Explain'] = "The line on the ROC curve for C2 starts higher whihc indicates a better classifier."
+    answers['(b) C2 better classifier than C1? Explain'] = """
+    The hint tells us that if a classifiers perfromance deviates positively from 
+    the diagonal line (ie TPR>FPR) then it is better than random guessing. However, 
+    C1 and C2 both do not do this so we cannot say that C2 is better when it is
+    equally ineffective as C1.
+    """
 
     # type: string
     # choices: ['TPR/FPR', 'precision/recall']
     answers['(c) Which metric?'] = "TPR/FPR"
 
     # type: explain_string
-    answers['(c) explain'] = "TPR/FPR is better because it considers both positive and negative classes and provides a more balanced assessment then precison/recall since precision/recall do not consider the negative classes."
+    answers['(c) explain'] = """
+    TPR/FPR is better because it considers both positive and negative classes and 
+    provides a more balanced assessment then precison/recall since precision/recall 
+    do not consider the negative classes."
+    """
     return answers
 
 
@@ -215,18 +227,16 @@ def question8():
     # p = FPR
     # p = 900/1000
     
-    #precision = TP/(TP+FP)
-    precision_C0 = .1 / (.1 + p*.9)
-    answers['(a) precision for C0'] = ".1 / (.1 + p*.9)"
+    #precision = TP/(TP+FP) = 100p/(100p + 900p)
+    answers['(a) precision for C0'] = "1/10"
 
     # type: eval_float
-    # recall = TP / (TP+FN)
-    recall_C0 = .1 / (.1+.8)
-    answers['(a) recall for C0'] = ".1 / (.1+.8)"
+    # recall = TP / (TP+FN) = 100p/100 = p
+    answers['(a) recall for C0'] = "p"
 
     # type: eval_float
-    #f_measure_C0 = (2*precision_C0 * recall_C0)/(precision_C0 + recall_C0)
-    answers['(b) F-measure of C0'] = "(2*(.1 / (.1 + p*.9)) * (.1 / (.1+.8)))/((.1 / (.1 + p*.9)) + (.1 / (.1+.8)))"
+    #f_measure_C0 = (2*precision_C0 * recall_C0)/(precision_C0 + recall_C0) = (2p/10) / (p/10)
+    answers['(b) F-measure of C0'] = "2 * ( (1/10) * p ) / ( (1/10) + p )"
     # print(f_measure_C0)
 
     # type: string
@@ -236,8 +246,8 @@ def question8():
     # type: float
     # What is the range of p for which C1 is better than random?  What is
     # "?" in the expression "p > ?"
-
-    answers['p-range'] = 0
+    
+    answers['p-range'] = 0.30
     return answers
 
 
@@ -280,6 +290,8 @@ def question9():
     answers['(ii) Explain your choices of best and worst metrics'] = """
     Accuarcy is the worst because it is skewed by the inbalanced number of rain cases. 
     It would be easy to say it always rains in Seattle and you would still have a high accuracy.
+    Therefore, accuracy more likely reflects the classifiers ability to predict the more common
+    class, rain, rather than its ability to discriminate well between rain and sunshine.
     F-measure is the best because it provides a balance between recall and precision and
     is especially useful when there is an inbalance of classes like in this case.
     """
@@ -318,7 +330,6 @@ def question10():
     prohibited items. Here TPR/FPR is a better measure. A higher TPR/FPR ratio indicates a better ability to
     distinguish genuine threats and false alarms which allows airport secuirty to enhance security measures 
     while minimizing disruptions to passengers.
-    
     """
     return answers
 #-----------------------------------------------------------
