@@ -33,13 +33,9 @@ def question1():
 
     # type: float
     # Calculate the probability.
-    # P(S=yes | B=bad) = P(S=yes, B=bad)/P(B=bad)
-    prob_s_yes_b_bad = 0.0
-    prob_b_bad = 0.1
+    # P(S=yes | B=bad) = ((0*.2+.1*.8)*.1)/.1
 
-    prob_part_c = prob_s_yes_b_bad / prob_b_bad
-
-    answers['(c)'] = prob_part_c
+    answers['(c)'] = 0.008
     return answers
 
 
